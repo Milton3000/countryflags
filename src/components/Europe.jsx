@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 const Europe = () => {
   const [europeData, setEuropeData] = useState([]);
@@ -13,6 +13,19 @@ const Europe = () => {
     };
     fetchData();
   }, []);
+
+  return (
+    <div>
+      <h1> Countries: </h1>
+      <ul>
+        {europeData &&
+          europeData.map((country) => (
+            <li key={country.alpha2Code}>{country.name.common}</li>
+          ))}
+      </ul>
+    </div>
+  );
 };
 
-export default Europe
+
+export default Europe;

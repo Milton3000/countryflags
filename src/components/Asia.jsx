@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 const Asia = () => {
   const [asiaData, setAsiaData] = useState([]);
@@ -13,6 +13,19 @@ const Asia = () => {
     };
     fetchData();
   }, []);
+
+  return (
+    <div>
+      <h1> Countries: </h1>
+      <ul>
+        {asiaData &&
+          asiaData.map((country) => (
+            <li key={country.alpha2Code}>{country.name.common}</li>
+          ))}
+      </ul>
+    </div>
+  );
 };
 
-export default Asia
+
+export default Asia;
