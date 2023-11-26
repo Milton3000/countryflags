@@ -6,7 +6,6 @@ function App() {
   return (
     <div className="App">
       <Regions />
-      <CountryList />
     </div>
   );
 }
