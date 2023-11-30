@@ -15,8 +15,8 @@ const Regions = () => {
       const data = await response.json();
       console.log("Fetched data:", data);
       setRegionData(data);
-      setGetDataClicked(false); 
     }
+    setGetDataClicked(false); 
   };
 
   useEffect(() => {

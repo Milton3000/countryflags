@@ -1,0 +1,43 @@
+* {
+    padding: 5px;
+    margin: 5px;
+    box-sizing: border-box;
+    background-color: rgba(250, 235, 215, 0.9);
+}
+
+.image {
+    min-width: 50px;
+    max-width: 100%;
+    height: auto;
+    padding: 12px;
+    margin: 5px;
+}
+
+h1 {
+    font-family: monospace, sans-serif;
+    font-weight: 900;
+}
+
+button, option {
+    font-family: monospace, sans-serif;
+    font-weight: 900;
+}
+
+.info-style {
+    text-align: center;
+    font-family: monospace, sans-serif;
+    font-weight: 600;
+    margin: 0;
+    font-size: 12px;
+}
+
+.list-style {
+    list-style: none;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-gap: 8px; 
+    align-items: center; 
+}

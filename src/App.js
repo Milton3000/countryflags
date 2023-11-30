@@ -1,6 +1,7 @@
 import React from "react";
 import Regions from "./components/Regions";
 import CountryList from "./components/CountryList";
+import styles from "./styles.css"
 
 function App() {
   return (
