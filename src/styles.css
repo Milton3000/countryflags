@@ -21,6 +21,7 @@ h1 {
 button, option {
     font-family: monospace, sans-serif;
     font-weight: 900;
+    cursor: pointer;
 }
 
 .info-style {
