@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import CountryList from "./CountryList";
 
@@ -16,7 +15,7 @@ const Regions = () => {
       console.log("Fetched data:", data);
       setRegionData(data);
     }
-    setGetDataClicked(false); 
+    setGetDataClicked(false);
   };
 
   useEffect(() => {

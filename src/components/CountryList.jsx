@@ -2,13 +2,15 @@ import React, { useState } from "react";
 
 const CountryList = ({ regionData }) => {
   const [selectedCountry, setSelectedCountry] = useState(null);
+  const [isModalOpen, setModalOpen] = useState(false);
 
   const toggleCountryInfo = (country) => {
-    if (selectedCountry === country) {
-      setSelectedCountry(null);
-    } else {
-      setSelectedCountry(country);
-    }
+    setSelectedCountry(country);
+    setModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalOpen(false);
   };
 
   return (
@@ -19,23 +21,31 @@ const CountryList = ({ regionData }) => {
           regionData.map((country, index) => (
             <li className="list-style" key={index}>
               {country.flags && (
-                <img className="image"
+                <img
+                  className="image"
                   src={country.flags.svg}
                   alt={`Flag of ${country.name?.common}`}
                   onClick={() => toggleCountryInfo(country)}
                   style={{ cursor: "pointer" }}
                 />
               )}
-              {selectedCountry === country && (
-                <div className="info-container">
-                  <p className="info-style">Country: {country.name?.common}</p>
-                  <p className="info-style">Capital: {country.capital}</p>
-                  <p className="info-style">Population: {country.population}</p>
-                </div>
-              )}
             </li>
           ))}
       </ul>
+
+      {selectedCountry && isModalOpen && (
+        <div className="modal">
+          <div className="modal-content">
+            <span className="close" onClick={closeModal}>
+              <b>CLOSE</b>
+            </span>
+            <h2>Country Information</h2>
+            <p>Country: {selectedCountry.name?.common}</p>
+            <p>Capital: {selectedCountry.capital}</p>
+            <p>Population: {selectedCountry.population}</p>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
